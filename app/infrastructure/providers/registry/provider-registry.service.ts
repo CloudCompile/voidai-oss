@@ -5,11 +5,14 @@ import { TYPES } from '../../../core/container';
 import type { ILogger } from '../../../core/logging';
 import type { MetricsService } from '../../../core/metrics';
 import type { BaseProviderAdapter } from '../base';
+import { discoverCustomProviders, type CustomProviderConfig } from '../adapters/openai-compatible.adapter';
+import { OpenAICompatibleAdapter } from '../adapters/openai-compatible.adapter';
 
 export interface ProviderAdapterInfo {
   name: string;
   adapterClass: new (...args: any[]) => BaseProviderAdapter;
   needsSubProviders: boolean;
+  customConfig?: CustomProviderConfig;
 }
 
 @injectable()
@@ -50,11 +53,14 @@ export class ProviderRegistryService {
         }
       }
 
+      this.registerCustomProviders();
+
       this.logger.info(`Registered ${this.adapters.size} provider adapters`, {
         metadata: { 
           adapters: Array.from(this.adapters.keys()),
           withSubProviders: Array.from(this.adapters.values()).filter(a => a.needsSubProviders).map(a => a.name),
-          withStaticKeys: Array.from(this.adapters.values()).filter(a => !a.needsSubProviders).map(a => a.name)
+          withStaticKeys: Array.from(this.adapters.values()).filter(a => !a.needsSubProviders).map(a => a.name),
+          custom: Array.from(this.adapters.values()).filter(a => a.customConfig).map(a => a.name)
         }
       });
     } catch (error) {
@@ -150,6 +156,16 @@ export class ProviderRegistryService {
     }
 
     try {
+      // Custom providers get the CustomProviderConfig injected directly
+      if (adapterInfo.customConfig) {
+        return new OpenAICompatibleAdapter(
+          adapterInfo.customConfig,
+          apiKey || adapterInfo.customConfig.apiKey,
+          this.logger,
+          this.metricsService
+        );
+      }
+
       const args: any[] = [];
       
       if (adapterInfo.needsSubProviders && apiKey) {
@@ -168,6 +184,36 @@ export class ProviderRegistryService {
         metadata: { needsSubProviders: adapterInfo.needsSubProviders }
       });
       return null;
+    }
+  }
+
+  private registerCustomProviders(): void {
+    const customConfigs = discoverCustomProviders();
+
+    for (const config of customConfigs) {
+      if (this.adapters.has(config.name)) {
+        this.logger.warn(`Custom provider name '${config.name}' conflicts with built-in adapter, skipping`, {
+          metadata: { baseUrl: config.baseUrl }
+        });
+        continue;
+      }
+
+      this.adapters.set(config.name, {
+        name: config.name,
+        adapterClass: OpenAICompatibleAdapter as any,
+        needsSubProviders: config.apiKey !== 'no-key',
+        customConfig: config
+      });
+
+      this.logger.info(`Registered custom provider: ${config.name}`, {
+        metadata: {
+          baseUrl: config.baseUrl,
+          models: config.models.length > 0 ? config.models : '(will auto-detect)',
+          capabilities: Object.entries(config.capabilities)
+            .filter(([_, enabled]) => enabled)
+            .map(([cap]) => cap)
+        }
+      });
     }
   }
 

@@ -38,6 +38,19 @@ Supabase
   Auth        → optional (dashboard auth)
 ```
 
+## Custom providers
+
+Any OpenAI-compatible endpoint can be added via env vars:
+
+```
+CUSTOM_PROVIDER_<NAME>_BASE_URL=https://your-api.com/v1
+CUSTOM_PROVIDER_<NAME>_API_KEY=your-key
+CUSTOM_PROVIDER_<NAME>_MODELS=model-1,model-2
+CUSTOM_PROVIDER_<NAME>_CAPABILITIES=chat,audio,embeddings,images,moderation
+```
+
+See `vercel_setup.md` for full details and examples.
+
 ## Environment variables
 
 Server-only:
@@ -45,6 +58,7 @@ Server-only:
 - `SUPABASE_SERVICE_ROLE_KEY`
 - `OPENAI_API_KEY`
 - Provider API keys used by configured adapters
+- `CUSTOM_PROVIDER_*` for custom OpenAI-compatible endpoints
 
 The service-role key must never be exposed via `NEXT_PUBLIC_*` variables.
 

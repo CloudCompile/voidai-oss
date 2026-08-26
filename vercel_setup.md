@@ -169,6 +169,49 @@ Add the following:
 
 > Only add the keys for providers you actually plan to use. The app will still work with just one.
 
+### Custom OpenAI-compatible providers
+
+If you use self-hosted or third-party APIs that speak the OpenAI format (LM Studio, Ollama, vLLM, LiteLLM, LocalAI, text-generation-webui, your own proxy, etc.), configure them with `CUSTOM_PROVIDER_*` env vars.
+
+For each provider, set these env vars:
+
+| Key | Required | Description |
+|---|---|---|
+| `CUSTOM_PROVIDER_<NAME>_BASE_URL` | Yes | API base URL (e.g. `http://localhost:1234/v1`) |
+| `CUSTOM_PROVIDER_<NAME>_API_KEY` | No | API key (defaults to `no-key` if not needed) |
+| `CUSTOM_PROVIDER_<NAME>_MODELS` | No | Comma-separated model IDs (e.g. `llama-3,mistral-7b`) |
+| `CUSTOM_PROVIDER_<NAME>_CAPABILITIES` | No | Comma-separated: `chat`, `audio`, `embeddings`, `images`, `moderation` (default: `chat`) |
+| `CUSTOM_PROVIDER_<NAME>_TIMEOUT` | No | Request timeout in ms (default: `60000`) |
+
+**Examples:**
+
+Local LM Studio instance:
+```
+CUSTOM_PROVIDER_LMSTUDIO_BASE_URL=http://localhost:1234/v1
+CUSTOM_PROVIDER_LMSTUDIO_API_KEY=no-key
+CUSTOM_PROVIDER_LMSTUDIO_MODELS=llama-3,mistral-7b,codellama
+CUSTOM_PROVIDER_LMSTUDIO_CAPABILITIES=chat
+```
+
+Remote vLLM deployment:
+```
+CUSTOM_PROVIDER_VLLM_BASE_URL=https://my-vllm.example.com/v1
+CUSTOM_PROVIDER_VLLM_API_KEY=sk-xxx
+CUSTOM_PROVIDER_VLLM_MODELS=meta-llama/Llama-3-70B
+CUSTOM_PROVIDER_VLLM_CAPABILITIES=chat,embeddings
+```
+
+LiteLLM proxy (multi-model):
+```
+CUSTOM_PROVIDER_LITELLM_BASE_URL=https://litellm.mycompany.com/v1
+CUSTOM_PROVIDER_LITELLM_API_KEY=sk-litellm-key
+CUSTOM_PROVIDER_LITELLM_MODELS=gpt-4o,claude-3-sonnet,command-r-plus
+CUSTOM_PROVIDER_LITELLM_CAPABILITIES=chat,audio,embeddings
+CUSTOM_PROVIDER_LITELLM_TIMEOUT=120000
+```
+
+> `<NAME>` can be any uppercase identifier (e.g. `LMSTUDIO`, `VLLM`, `MYPROXY`). It becomes the provider ID used in the database and API routing.
+
 ### Optional
 
 | Key | Default | Purpose |
