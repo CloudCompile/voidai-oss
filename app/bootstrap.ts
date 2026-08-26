@@ -1,6 +1,5 @@
 import 'reflect-metadata';
 import { container } from './core/container';
-import { DatabaseService } from './infrastructure/database';
 import type { ILogger } from './core/logging';
 import type { MetricsService } from './core/metrics';
 import { TYPES } from './core/container/types';
@@ -16,7 +15,6 @@ export interface BootstrapConfig {
 export class ApplicationBootstrap {
   private logger?: ILogger;
   private metricsService?: MetricsService;
-  private databaseService?: DatabaseService;
 
   constructor(private config: BootstrapConfig = {}) {}
 
@@ -36,7 +34,6 @@ export class ApplicationBootstrap {
         }
       });
 
-      await this.initializeDatabase();
       await this.initializeMetrics();
       await this.initializeProviders();
       
@@ -46,18 +43,6 @@ export class ApplicationBootstrap {
       
     } catch (error) {
       console.error('Bootstrap initialization failed:', error);
-      throw error;
-    }
-  }
-
-  private async initializeDatabase(): Promise<void> {
-    try {
-      this.databaseService = container.get<DatabaseService>(TYPES.DatabaseService);
-      await this.databaseService.connect();
-      
-      this.logger?.info('Database connection established successfully');
-    } catch (error) {
-      this.logger?.error('Database initialization failed', error as Error);
       throw error;
     }
   }
@@ -99,11 +84,6 @@ export class ApplicationBootstrap {
         this.logger?.info('Metrics collection stopped');
       }
 
-      if (this.databaseService) {
-        await this.databaseService.disconnect();
-        this.logger?.info('Database connection closed');
-      }
-      
       this.logger?.info('Application shutdown completed successfully');
     } catch (error) {
       console.error('Error during shutdown:', error);

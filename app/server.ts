@@ -19,6 +19,7 @@ export class ApplicationServer {
   private logger?: ILogger;
   private metricsService?: IMetricsService;
   private config: ServerConfig;
+  private initialized = false;
 
   constructor(bootstrap: ApplicationBootstrap) {
     this.bootstrap = bootstrap;
@@ -27,18 +28,40 @@ export class ApplicationServer {
     this.setupMiddleware();
   }
 
-  async start(): Promise<void> {
+  async initialize(): Promise<void> {
+    if (this.initialized) {
+      return;
+    }
+
     try {
       await this.bootstrap.initialize();
-      
+
       this.logger = container.get<ILogger>(TYPES.Logger);
-      
+
       if (container.isBound(TYPES.MetricsService)) {
         this.metricsService = container.get<IMetricsService>(TYPES.MetricsService);
       }
 
       this.setupRoutes();
       this.setupErrorHandling();
+      this.initialized = true;
+    } catch (error) {
+      console.error('Failed to initialize server:', error);
+      throw error;
+    }
+  }
+
+  getApp(): Elysia {
+    if (!this.initialized) {
+      throw new Error('Server must be initialized before accessing the application');
+    }
+
+    return this.app;
+  }
+
+  async start(): Promise<void> {
+    try {
+      await this.initialize();
 
       this.app.listen(this.config.port, () => {
         this.logger?.info('Server started successfully', {
