@@ -1,13 +1,10 @@
 import { injectable, inject } from 'inversify';
-import * as cron from 'node-cron';
 import type { UserRepository } from '../../repositories';
 import type { ILogger } from '../../../core/logging';
 import { TYPES } from '../../../core/container';
 import { PLAN_CONFIGS, type UserPlan } from '../../config';
 
 export interface ICreditService {
-  startCronJobs(): void;
-  stopCronJobs(): void;
   resetCredits(): Promise<void>;
   resetUserCredits(userId: string): Promise<boolean>;
   consumeCredits(userId: string, amount: number): Promise<boolean>;
@@ -17,7 +14,6 @@ export interface ICreditService {
 export class CreditService implements ICreditService {
   private readonly logger: ILogger;
   private readonly userRepository: UserRepository;
-  private cronJob?: cron.ScheduledTask;
 
   constructor(
     @inject(TYPES.Logger) logger: ILogger,
@@ -25,28 +21,6 @@ export class CreditService implements ICreditService {
   ) {
     this.logger = logger.createChild('CreditService');
     this.userRepository = userRepository;
-  }
-
-  startCronJobs(): void {
-    this.cronJob = cron.schedule('* * * * *', async () => {
-      await this.resetCredits();
-    }, { timezone: 'UTC' });
-
-    this.cronJob.start();
-    
-    this.logger.info('Credit reset cron job started', {
-      metadata: { schedule: '* * * * *' }
-    });
-  }
-
-  stopCronJobs(): void {
-    if (this.cronJob) {
-      this.cronJob.stop();
-      this.cronJob.destroy();
-      this.cronJob = undefined;
-      
-      this.logger.info('Credit reset cron job stopped');
-    }
   }
 
   async resetCredits(): Promise<void> {

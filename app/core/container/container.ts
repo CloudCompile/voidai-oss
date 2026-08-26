@@ -5,12 +5,12 @@ import { Logger, ILogger } from '../logging';
 import { CryptoService, RateLimiter, SecurityService } from '../security';
 import { PrometheusCollector, MetricsService } from '../metrics';
 import { ErrorClassificationService } from '../error-classification';
-import { DatabaseService } from '../../infrastructure/database';
+
 import {
-  MongoUserRepository,
-  MongoProviderRepository,
-  MongoSubProviderRepository,
-  MongoApiRequestRepository
+  SupabaseUserRepository,
+  SupabaseProviderRepository,
+  SupabaseSubProviderRepository,
+  SupabaseApiRequestRepository
 } from '../../infrastructure/repositories';
 import {
   UserService,
@@ -235,15 +235,14 @@ export class ApplicationContainer implements IApplicationContainer {
   }
 
   private configureCore(): void {
-    this.container.bind(TYPES.DatabaseService).to(DatabaseService).inSingletonScope();
     this.container.bind(TYPES.ErrorClassificationService).to(ErrorClassificationService).inSingletonScope();
   }
 
   private configureRepositories(): void {
-    this.container.bind(TYPES.UserRepository).to(MongoUserRepository).inSingletonScope();
-    this.container.bind(TYPES.ProviderRepository).to(MongoProviderRepository).inSingletonScope();
-    this.container.bind(TYPES.SubProviderRepository).to(MongoSubProviderRepository).inSingletonScope();
-    this.container.bind(TYPES.ApiRequestRepository).to(MongoApiRequestRepository).inSingletonScope();
+    this.container.bind(TYPES.UserRepository).to(SupabaseUserRepository).inSingletonScope();
+    this.container.bind(TYPES.ProviderRepository).to(SupabaseProviderRepository).inSingletonScope();
+    this.container.bind(TYPES.SubProviderRepository).to(SupabaseSubProviderRepository).inSingletonScope();
+    this.container.bind(TYPES.ApiRequestRepository).to(SupabaseApiRequestRepository).inSingletonScope();
   }
 
   private configureDomainServices(): void {

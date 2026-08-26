@@ -1,0 +1,30 @@
+{
+  "functions": {
+    "api/index.ts": {
+      "maxDuration": 300
+    },
+    "api/cron.ts": {
+      "maxDuration": 60
+    }
+  },
+  "crons": [
+    {
+      "path": "/api/cron",
+      "schedule": "0 * * * *"
+    }
+  ],
+  "rewrites": [
+    {
+      "source": "/health",
+      "destination": "/api"
+    },
+    {
+      "source": "/metrics",
+      "destination": "/api"
+    },
+    {
+      "source": "/((?!api/cron|api/index).*)",
+      "destination": "/api"
+    }
+  ]
+}
