@@ -1,6 +1,6 @@
 import type { VercelRequest, VercelResponse } from '@vercel/node';
-import { ApplicationBootstrap } from '../app/bootstrap';
-import { ApplicationServer } from '../app/server';
+import { ApplicationBootstrap } from '../app/bootstrap.js';
+import { ApplicationServer } from '../app/server.js';
 
 let serverPromise: Promise<ApplicationServer> | undefined;
 

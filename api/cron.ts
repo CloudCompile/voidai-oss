@@ -1,7 +1,7 @@
 import type { VercelRequest, VercelResponse } from '@vercel/node';
-import { ApplicationBootstrap } from '../app/bootstrap';
-import { TYPES, container } from '../app/core/container';
-import type { CreditService } from '../app/domain/services/billing/credit.service';
+import { ApplicationBootstrap } from '../app/bootstrap.js';
+import { TYPES, container } from '../app/core/container/container.js';
+import type { CreditService } from '../app/domain/services/billing/credit.service.js';
 
 let serverPromise: Promise<void> | undefined;
 
