@@ -1,11 +1,18 @@
 {
   "extends": "./tsconfig.json",
   "compilerOptions": {
-    "noEmit": false,
-    "outDir": ".vercel-ts",
-    "module": "NodeNext",
-    "moduleResolution": "NodeNext",
-    "declaration": false,
-    "sourceMap": false
-  }
+    "noEmit": true,
+    "module": "ESNext",
+    "moduleResolution": "bundler"
+  },
+  "exclude": [
+    "node_modules",
+    "dist",
+    "drizzle",
+    "app/infrastructure/database/**/*",
+    "app/infrastructure/repositories/user.repository.ts",
+    "app/infrastructure/repositories/provider.repository.ts",
+    "app/infrastructure/repositories/sub-provider.repository.ts",
+    "app/infrastructure/repositories/api-request.repository.ts"
+  ]
 }
