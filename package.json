@@ -2,6 +2,7 @@
   "name": "voidai-ts",
   "version": "1.0.0",
   "description": "",
+  "type": "module",
   "main": "src/index.ts",
   "scripts": {
     "dev": "bun run app/main.ts",

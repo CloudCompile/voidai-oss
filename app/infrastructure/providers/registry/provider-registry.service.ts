@@ -1,6 +1,7 @@
 import { injectable, inject } from 'inversify';
 import { readdirSync } from 'fs';
-import { join } from 'path';
+import { join, dirname } from 'path';
+import { fileURLToPath } from 'url';
 import { TYPES } from '../../../core/container';
 import type { ILogger } from '../../../core/logging';
 import type { MetricsService } from '../../../core/metrics';
@@ -27,6 +28,8 @@ export class ProviderRegistryService {
   }
 
   private async registerAdapters(): Promise<void> {
+    const __filename = fileURLToPath(import.meta.url);
+    const __dirname = dirname(__filename);
     const adaptersPath = join(__dirname, '../adapters');
     
     try {

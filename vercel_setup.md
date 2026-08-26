@@ -48,7 +48,7 @@ Once your Supabase project is ready:
      updated_at timestamptz not null default now()
    );
 
-   create unique index if not exists users_api_key_hashes_idx
+   create index if not exists users_api_key_hashes_idx
      on public.users using gin (api_key_hashes);
    create index if not exists users_plan_idx on public.users (plan);
    create index if not exists users_enabled_idx on public.users (enabled);
