@@ -5,14 +5,8 @@
     "module": "ESNext",
     "moduleResolution": "bundler"
   },
-  "exclude": [
-    "node_modules",
-    "dist",
-    "drizzle",
-    "app/infrastructure/database/**/*",
-    "app/infrastructure/repositories/user.repository.ts",
-    "app/infrastructure/repositories/provider.repository.ts",
-    "app/infrastructure/repositories/sub-provider.repository.ts",
-    "app/infrastructure/repositories/api-request.repository.ts"
+  "files": [
+    "api/index.ts",
+    "api/cron.ts"
   ]
 }
