@@ -1,5 +1,4 @@
 {
-  "buildCommand": "bun run build",
   "functions": {
     "api/index.ts": {
       "maxDuration": 300
