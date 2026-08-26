@@ -255,12 +255,14 @@ Once deployed:
 
 ## 8. Set up Vercel Cron (optional)
 
-The project includes a cron job (`api/cron.ts`) that resets user credits every hour. Vercel automatically enables cron jobs on the **Hobby** (free) tier and above.
+The project includes a cron job (`api/cron.ts`) that resets user credits daily. Vercel automatically enables cron jobs on the **Hobby** (free) tier and above.
 
 To verify it's active:
 
 1. Go to your Vercel project → **Settings** → **Cron Jobs**.
-2. You should see `/api/cron` scheduled to run every hour (`0 * * * *`).
+2. You should see `/api/cron` scheduled to run daily at midnight UTC (`0 0 * * *`).
+
+> **Hobby plan note:** Vercel's free tier limits cron jobs to once per day. The schedule is set to `0 0 * * *` (daily). If you upgrade to Pro, you can change it back to `0 * * * *` (hourly) in `vercel.json`.
 
 If you don't see it, make sure `vercel.json` in your repo root contains:
 ```json
@@ -268,7 +270,7 @@ If you don't see it, make sure `vercel.json` in your repo root contains:
   "crons": [
     {
       "path": "/api/cron",
-      "schedule": "0 * * * *"
+      "schedule": "0 0 * * *"
     }
   ]
 }
@@ -329,7 +331,7 @@ curl https://your-project.vercel.app/v1/chat/completions \
 ```
 api/
   index.ts          # Vercel catch-all API handler → Elysia
-  cron.ts           # Hourly credit reset cron job
+  cron.ts           # Daily credit reset cron job
 
 app/
   bootstrap.ts      # App initialization (no MongoDB)

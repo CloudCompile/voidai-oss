@@ -31,7 +31,7 @@ This repository has been migrated from a Dockerized Bun/Elysia + MongoDB/Redis a
 ```
 Vercel
   /api        → catch-all Elysia handler (all API routes)
-  /api/cron   → hourly credit reset cron job
+  /api/cron   → daily credit reset cron job (Hobby plan: once/day, Pro: hourly)
 
 Supabase
   PostgreSQL  → users, providers, sub_providers, api_requests
