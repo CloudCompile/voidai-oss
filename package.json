@@ -7,7 +7,8 @@
   "scripts": {
     "dev": "bun run app/main.ts",
     "start": "bun run app/main.ts",
-    "typecheck": "tsc -p tsconfig.json --noEmit"
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "build": "tsc -p tsconfig.vercel.json"
   },
   "keywords": [],
   "author": "Acatto, Lukinhas",

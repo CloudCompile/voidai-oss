@@ -1,9 +1,11 @@
 {
   "functions": {
     "api/index.ts": {
+      "runtime": "nodejs22.x",
       "maxDuration": 300
     },
     "api/cron.ts": {
+      "runtime": "nodejs22.x",
       "maxDuration": 60
     }
   },
