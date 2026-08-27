@@ -1,4 +1,5 @@
 {
+  "outputDirectory": "vercel-output",
   "buildCommand": "bun run build",
   "functions": {
     "api/index.ts": {

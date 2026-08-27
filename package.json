@@ -7,7 +7,7 @@
     "dev": "bun run app/main.ts",
     "start": "bun run app/main.ts",
     "typecheck": "tsc -p tsconfig.json --noEmit",
-    "build": "node bundle-vercel.mjs"
+    "build": "node bundle-vercel.mjs && node -e \"require('fs').mkdirSync('vercel-output', { recursive: true })\""
   },
   "keywords": [],
   "author": "Acatto, Lukinhas",
