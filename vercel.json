@@ -1,10 +1,10 @@
 {
   "buildCommand": "bun run build",
   "functions": {
-    "api/index.js": {
+    "api/index.ts": {
       "maxDuration": 300
     },
-    "api/cron.js": {
+    "api/cron.ts": {
       "maxDuration": 60
     }
   },
@@ -17,15 +17,15 @@
   "rewrites": [
     {
       "source": "/health",
-      "destination": "/api/index.js"
+      "destination": "/api/index"
     },
     {
       "source": "/metrics",
-      "destination": "/api/index.js"
+      "destination": "/api/index"
     },
     {
       "source": "/((?!api/cron|api/index).*)",
-      "destination": "/api/index.js"
+      "destination": "/api/index"
     }
   ]
 }
