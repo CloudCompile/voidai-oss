@@ -1,4 +1,4 @@
-import { SubProviderIdentity, SubProviderConfiguration, SubProviderMetrics, SubProviderLimits } from '../../../domain/entities';
+import { SubProviderIdentity, SubProviderConfiguration, SubProviderMetrics, SubProviderLimits } from '../../../domain/entities.js';
 
 export interface SubProviderDocument {
   _id?: string;

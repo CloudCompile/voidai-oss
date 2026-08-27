@@ -1,2 +1,2 @@
-export * from './base';
-export * from './adapters';
+export * from './base.js';
+export * from './adapters.js';

@@ -1,11 +1,10 @@
 {
-  "outputDirectory": ".vercel-output",
   "buildCommand": "bun run build",
   "functions": {
-    "api/index.ts": {
+    "api/index.js": {
       "maxDuration": 300
     },
-    "api/cron.ts": {
+    "api/cron.js": {
       "maxDuration": 60
     }
   },
@@ -18,15 +17,15 @@
   "rewrites": [
     {
       "source": "/health",
-      "destination": "/api"
+      "destination": "/api/index.js"
     },
     {
       "source": "/metrics",
-      "destination": "/api"
+      "destination": "/api/index.js"
     },
     {
       "source": "/((?!api/cron|api/index).*)",
-      "destination": "/api"
+      "destination": "/api/index.js"
     }
   ]
 }

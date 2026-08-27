@@ -1,12 +1,12 @@
 import { Elysia } from 'elysia';
 import { injectable } from 'inversify';
-import { TYPES } from '../../core/container/types';
+import { TYPES } from '../../core/container/types.js';
 import type { ILogger } from '../../core/logging';
 import type { MetricsService } from '../../core/metrics';
 import type { SecurityService } from '../../core/security';
 import { container } from '../../core/container';
-import type { AuthenticatedUser } from '../../application/types';
-import { authPlugin, errorPlugin, metricsPlugin, snakeCasePlugin } from '../plugins';
+import type { AuthenticatedUser } from '../../application/types.js';
+import { authPlugin, errorPlugin, metricsPlugin, snakeCasePlugin } from '../plugins.js';
 
 export interface RequestContext {
   readonly requestId: string;

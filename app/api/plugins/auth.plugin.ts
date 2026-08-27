@@ -3,7 +3,7 @@ import { container, TYPES } from '../../core/container';
 import type { ILogger } from '../../core/logging';
 import type { SecurityService } from '../../core/security';
 import type { UserService } from '../../domain/services';
-import type { AuthenticatedUser } from '../../application/types';
+import type { AuthenticatedUser } from '../../application/types.js';
 
 export class AuthPlugin {
   private readonly pluginName = 'auth';

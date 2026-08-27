@@ -1,17 +1,17 @@
 import { injectable, inject } from 'inversify';
 import { TYPES } from '../../../core/container';
 import type { ILogger } from '../../../core/logging';
-import type { UserService } from '../user';
-import type { IDiscordWebhookService } from './discord-webhook.service';
-import type { BaseProviderAdapter } from '../../../infrastructure/providers/base';
+import type { UserService } from '../user.js';
+import type { IDiscordWebhookService } from './discord-webhook.service.js';
+import type { BaseProviderAdapter } from '../../../infrastructure/providers/base.js';
 import type { MetricsService } from '../../../core/metrics';
-import { OpenAIAdapter } from '../../../infrastructure/providers/adapters';
+import { OpenAIAdapter } from '../../../infrastructure/providers/adapters.js';
 import type {
   ModerationRequest,
   ModerationResponse,
   CSAMDetectionResult,
   ChatMessage
-} from '../../../application/types';
+} from '../../../application/types.js';
 
 export interface ICSAMDetectorService {
   updateApiKey(apiKey: string): void;

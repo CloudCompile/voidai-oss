@@ -1,3 +1,3 @@
-export * from './metrics.service';
-export * from './discord-webhook.service';
-export * from './csam-detector.service';
+export * from './metrics.service.js';
+export * from './discord-webhook.service.js';
+export * from './csam-detector.service.js';

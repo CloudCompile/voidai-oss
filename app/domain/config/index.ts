@@ -1,1 +1,1 @@
-export * from './plan.config';
+export * from './plan.config.js';

@@ -1,4 +1,4 @@
-import { RequestIdentity, RequestDetails, RequestMetrics, RequestStatus } from '../../../domain/entities';
+import { RequestIdentity, RequestDetails, RequestMetrics, RequestStatus } from '../../../domain/entities.js';
 
 export interface ApiRequestDocument {
   _id?: string;

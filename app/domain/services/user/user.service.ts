@@ -1,5 +1,5 @@
 import { injectable, inject } from 'inversify';
-import { User, UserIdentity, UserAuthentication, UserAuthorization, UserUsage } from '../../entities';
+import { User, UserIdentity, UserAuthentication, UserAuthorization, UserUsage } from '../../entities.js';
 import type { UserRepository } from '../../repositories';
 import { MetricsService } from '../../../core/metrics';
 import { SecurityService } from '../../../core/security';

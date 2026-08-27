@@ -1,7 +1,7 @@
 import { injectable, inject } from 'inversify';
-import { TYPES } from '../../../core/container/types';
+import { TYPES } from '../../../core/container/types.js';
 import type { ILogger } from '../../../core/logging';
-import { ModerationAlert } from '../../../application/types';
+import { ModerationAlert } from '../../../application/types.js';
 
 export interface IDiscordWebhookService {
   sendModerationAlert(alert: ModerationAlert): Promise<void>;

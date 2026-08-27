@@ -1,9 +1,9 @@
 import { t } from 'elysia';
 import { injectable } from 'inversify';
-import { TYPES } from '../../../core/container/types';
+import { TYPES } from '../../../core/container/types.js';
 import type { ImagesService } from '../../../application/services';
-import type { ImageGenerationRequest, ImageEditRequest } from '../../../application/types';
-import { BaseController, type RequestContext, type ControllerConfiguration } from '../base.controller';
+import type { ImageGenerationRequest, ImageEditRequest } from '../../../application/types.js';
+import { BaseController, type RequestContext, type ControllerConfiguration } from '../base.controller.js';
 
 const ImageGenerationRequestSchema = t.Object({
   model: t.Optional(t.String()),

@@ -2,7 +2,7 @@ import { injectable, inject } from 'inversify';
 import { TYPES } from '../../core/container';
 import type { ILogger } from '../../core/logging';
 import type { UserService, AuthorizationService, ModelRegistryService } from '../../domain/services';
-import type { ModelListResponse, AuthenticatedUser } from '../types';
+import type { ModelListResponse, AuthenticatedUser } from '../types.js';
 
 @injectable()
 export class ModelsService {

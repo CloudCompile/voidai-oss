@@ -2,13 +2,12 @@
   "name": "voidai-ts",
   "version": "1.0.0",
   "description": "",
-  "type": "module",
-  "main": "src/index.ts",
+    "main": "src/index.ts",
   "scripts": {
     "dev": "bun run app/main.ts",
     "start": "bun run app/main.ts",
     "typecheck": "tsc -p tsconfig.json --noEmit",
-    "build": "tsc -p tsconfig.vercel.json --noEmit"
+    "build": "node scripts/bundle-vercel.mjs"
   },
   "keywords": [],
   "author": "Acatto, Lukinhas",
@@ -33,6 +32,7 @@
     "@types/bun": "^1.2.19",
     "@types/node": "^24.2.0",
     "@vercel/node": "^7.0.0",
+    "esbuild": "^0.25.0",
     "typescript": "^7.0.2"
   }
 }

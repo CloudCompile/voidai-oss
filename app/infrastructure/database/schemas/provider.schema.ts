@@ -1,4 +1,4 @@
-import { ProviderIdentity, ProviderConfiguration, ProviderMetrics, ProviderCosts, ProviderSecurity } from '../../../domain/entities';
+import { ProviderIdentity, ProviderConfiguration, ProviderMetrics, ProviderCosts, ProviderSecurity } from '../../../domain/entities.js';
 
 export interface ProviderDocument {
   _id?: string;

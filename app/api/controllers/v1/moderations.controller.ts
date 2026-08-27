@@ -1,9 +1,9 @@
 import { t } from 'elysia';
 import { injectable } from 'inversify';
-import { TYPES } from '../../../core/container/types';
+import { TYPES } from '../../../core/container/types.js';
 import type { ModerationsService } from '../../../application/services';
-import type { ModerationRequest } from '../../../application/types';
-import { BaseController, type RequestContext, type ControllerConfiguration } from '../base.controller';
+import type { ModerationRequest } from '../../../application/types.js';
+import { BaseController, type RequestContext, type ControllerConfiguration } from '../base.controller.js';
 
 const ModerationRequestSchema = t.Object({
   input: t.Union([

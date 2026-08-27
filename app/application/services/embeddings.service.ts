@@ -4,8 +4,8 @@ import type { ILogger } from '../../core/logging';
 import type { ErrorClassificationService } from '../../core/error-classification';
 import type { UserService, AuthorizationService, LoadBalancerService, ApiRequestService } from '../../domain/services';
 import type { LoadBalancingResult } from '../../domain/services';
-import type { ApiRequest } from '../../domain/entities';
-import type { EmbeddingRequest, EmbeddingResponse, AuthenticatedUser } from '../types';
+import type { ApiRequest } from '../../domain/entities.js';
+import type { EmbeddingRequest, EmbeddingResponse, AuthenticatedUser } from '../types.js';
 
 interface ProviderAttempt {
   providerId: string;

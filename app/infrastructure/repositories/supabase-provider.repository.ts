@@ -1,9 +1,9 @@
 import { injectable, inject } from 'inversify';
-import { Provider } from '../../domain/entities';
+import { Provider } from '../../domain/entities.js';
 import type { ProviderRepository } from '../../domain/repositories';
 import type { ILogger } from '../../core/logging';
 import { TYPES } from '../../core/container';
-import { getSupabaseAdmin } from '../supabase/client';
+import { getSupabaseAdmin } from '../supabase/client.js';
 
 interface ProviderRow {
   id: string;

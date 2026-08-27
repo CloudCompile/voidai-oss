@@ -10,7 +10,7 @@ import {
   HistogramMetric,
   SummaryMetric,
   MetricsConfig
-} from './types';
+} from './types.js';
 
 @injectable()
 export class PrometheusCollector implements IMetricsCollector {

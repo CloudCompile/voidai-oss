@@ -1,5 +1,5 @@
 import { injectable, inject } from 'inversify';
-import { ApiRequest, RequestIdentity, RequestDetails, RequestMetrics, RequestStatus } from '../../entities';
+import { ApiRequest, RequestIdentity, RequestDetails, RequestMetrics, RequestStatus } from '../../entities.js';
 import type { ApiRequestRepository } from '../../repositories';
 import type { MetricsService } from '../../../core/metrics';
 import { TYPES } from '../../../core/container';

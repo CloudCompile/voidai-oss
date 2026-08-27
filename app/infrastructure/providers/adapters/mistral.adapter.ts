@@ -1,5 +1,5 @@
 import { injectable } from 'inversify';
-import { BaseProviderAdapter, type ProviderConfiguration } from '../base';
+import { BaseProviderAdapter, type ProviderConfiguration } from '../base.js';
 import type { ILogger } from '../../../core/logging';
 import type { MetricsService } from '../../../core/metrics';
 import type { 
@@ -11,7 +11,7 @@ import type {
   TranscriptionResponse,
   EmbeddingResponse,
   ImageResponse
-} from '../../../application/types';
+} from '../../../application/types.js';
 
 @injectable()
 export class MistralAdapter extends BaseProviderAdapter {

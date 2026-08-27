@@ -1,9 +1,9 @@
 import { t } from 'elysia';
 import { injectable } from 'inversify';
-import { TYPES } from '../../../core/container/types';
+import { TYPES } from '../../../core/container/types.js';
 import type { ChatService } from '../../../application/services';
-import type { ChatCompletionRequest, ChatCompletionResponse } from '../../../application/types';
-import { BaseController, type RequestContext, type ControllerConfiguration } from '../base.controller';
+import type { ChatCompletionRequest, ChatCompletionResponse } from '../../../application/types.js';
+import { BaseController, type RequestContext, type ControllerConfiguration } from '../base.controller.js';
 
 const ChatMessageSchema = t.Object({
   role: t.Union([

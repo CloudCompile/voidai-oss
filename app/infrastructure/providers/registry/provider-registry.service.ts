@@ -5,9 +5,9 @@ import { fileURLToPath } from 'url';
 import { TYPES } from '../../../core/container';
 import type { ILogger } from '../../../core/logging';
 import type { MetricsService } from '../../../core/metrics';
-import type { BaseProviderAdapter } from '../base';
-import { discoverCustomProviders, type CustomProviderConfig } from '../adapters/openai-compatible.adapter';
-import { OpenAICompatibleAdapter } from '../adapters/openai-compatible.adapter';
+import type { BaseProviderAdapter } from '../base.js';
+import { discoverCustomProviders, type CustomProviderConfig } from '../adapters/openai-compatible.adapter.js';
+import { OpenAICompatibleAdapter } from '../adapters/openai-compatible.adapter.js';
 
 export interface ProviderAdapterInfo {
   name: string;

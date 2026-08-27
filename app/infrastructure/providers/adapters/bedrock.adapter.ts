@@ -1,7 +1,7 @@
 import { injectable } from 'inversify';
 import { EventStreamCodec } from '@smithy/eventstream-codec';
 import { fromUtf8, toUtf8 } from '@smithy/util-utf8';
-import { BaseProviderAdapter, type ProviderConfiguration } from '../base';
+import { BaseProviderAdapter, type ProviderConfiguration } from '../base.js';
 import type { ILogger } from '../../../core/logging';
 import type { MetricsService } from '../../../core/metrics';
 import type { 
@@ -15,7 +15,7 @@ import type {
   EmbeddingResponse,
   ImageResponse,
   ModerationResponse
-} from '../../../application/types';
+} from '../../../application/types.js';
 
 interface AnthropicMessage {
   role: 'user' | 'assistant';

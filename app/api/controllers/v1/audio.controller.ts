@@ -1,9 +1,9 @@
 import { t } from 'elysia';
 import { injectable } from 'inversify';
-import { TYPES } from '../../../core/container/types';
+import { TYPES } from '../../../core/container/types.js';
 import type { AudioService } from '../../../application/services';
-import type { SpeechRequest, AudioTranscriptionRequest } from '../../../application/types';
-import { BaseController, type RequestContext, type ControllerConfiguration } from '../base.controller';
+import type { SpeechRequest, AudioTranscriptionRequest } from '../../../application/types.js';
+import { BaseController, type RequestContext, type ControllerConfiguration } from '../base.controller.js';
 
 const TranscriptionRequestSchema = t.Object({
   file: t.File(),

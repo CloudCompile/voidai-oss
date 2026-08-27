@@ -1,5 +1,5 @@
 import { injectable, inject } from 'inversify';
-import { Provider, ProviderIdentity, ProviderConfiguration, ProviderMetrics, ProviderCosts, ProviderSecurity } from '../../entities';
+import { Provider, ProviderIdentity, ProviderConfiguration, ProviderMetrics, ProviderCosts, ProviderSecurity } from '../../entities.js';
 import type { ProviderRepository } from '../../repositories';
 import { MetricsService } from '../../../core/metrics';
 import { TYPES } from '../../../core/container';

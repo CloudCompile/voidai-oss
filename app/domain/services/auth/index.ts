@@ -1,2 +1,2 @@
-export * from './authentication.service';
-export * from './authorization.service';
+export * from './authentication.service.js';
+export * from './authorization.service.js';

@@ -1,1 +1,1 @@
-export * from './error-classification.service';
+export * from './error-classification.service.js';

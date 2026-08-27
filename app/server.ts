@@ -1,6 +1,6 @@
 import { Elysia } from 'elysia';
 import { cors } from '@elysiajs/cors';
-import { ApplicationBootstrap } from './bootstrap';
+import { ApplicationBootstrap } from './bootstrap.js';
 import type { ILogger, IMetricsService } from './core';
 import { TYPES, container } from './core/container';
 

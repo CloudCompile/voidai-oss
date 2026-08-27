@@ -1,9 +1,9 @@
 import { injectable, inject } from 'inversify';
-import { ApiRequest } from '../../domain/entities';
+import { ApiRequest } from '../../domain/entities.js';
 import type { ApiRequestRepository } from '../../domain/repositories';
 import type { ILogger } from '../../core/logging';
 import { TYPES } from '../../core/container';
-import { getSupabaseAdmin } from '../supabase/client';
+import { getSupabaseAdmin } from '../supabase/client.js';
 
 interface ApiRequestRow {
   id: string;

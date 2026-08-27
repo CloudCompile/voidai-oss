@@ -1,5 +1,5 @@
 import { injectable } from 'inversify';
-import { ModelInfo } from '../../../application/types';
+import { ModelInfo } from '../../../application/types.js';
 
 @injectable()
 export class ModelRegistryService {

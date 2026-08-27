@@ -1,4 +1,4 @@
-import { SubProvider } from '../entities';
+import { SubProvider } from '../entities.js';
 
 export interface SubProviderRepository {
   findById(id: string): Promise<SubProvider | null>;

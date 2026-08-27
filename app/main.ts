@@ -1,5 +1,5 @@
-import { ApplicationBootstrap } from './bootstrap';
-import { ApplicationServer } from './server';
+import { ApplicationBootstrap } from './bootstrap.js';
+import { ApplicationServer } from './server.js';
 
 async function main(): Promise<void> {
   try {
