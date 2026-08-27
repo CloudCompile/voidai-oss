@@ -1,7 +1,7 @@
 import { injectable, inject } from 'inversify';
 import { t } from 'elysia';
 import { TYPES } from '../../../core/container';
-import { BaseController, type ControllerConfiguration } from '../base.controller';
+import { BaseController, type ControllerConfiguration } from '../base.controller.js';
 import type { UserService } from '../../../domain/services';
 
 export interface CreateUserRequest {

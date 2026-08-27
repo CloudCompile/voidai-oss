@@ -1,1 +1,1 @@
-export * from './provider-initialization.service';
+export * from './provider-initialization.service.js';

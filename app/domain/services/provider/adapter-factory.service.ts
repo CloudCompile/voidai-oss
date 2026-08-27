@@ -3,8 +3,8 @@ import { TYPES } from '../../../core/container';
 import type { ILogger } from '../../../core/logging';
 import type { CryptoService } from '../../../core/security';
 import type { ProviderRegistryService } from '../../../infrastructure/providers/registry';
-import type { BaseProviderAdapter } from '../../../infrastructure/providers/base';
-import type { SubProvider } from '../../entities';
+import type { BaseProviderAdapter } from '../../../infrastructure/providers/base.js';
+import type { SubProvider } from '../../entities.js';
 
 export interface AdapterInstance {
   adapter: BaseProviderAdapter;

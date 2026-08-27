@@ -1,8 +1,8 @@
 import { injectable, inject } from 'inversify';
 import type { ILogger } from '../logging';
 import { TYPES } from '../container';
-import { type ICryptoService, EncryptionResult } from './crypto.service';
-import { type IRateLimiter, RateLimitConfig, RateLimitResult } from './rate-limiter';
+import { type ICryptoService, EncryptionResult } from './crypto.service.js';
+import { type IRateLimiter, RateLimitConfig, RateLimitResult } from './rate-limiter.js';
 
 export interface SecurityContext {
   userId?: string;

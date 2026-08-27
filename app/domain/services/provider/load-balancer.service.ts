@@ -1,8 +1,8 @@
 import { injectable, inject } from 'inversify';
-import { Provider, SubProvider } from '../../entities';
+import { Provider, SubProvider } from '../../entities.js';
 import type { ProviderRepository, SubProviderRepository } from '../../repositories';
-import type { AdapterFactoryService } from './adapter-factory.service';
-import { TYPES } from '../../../core/container/types';
+import type { AdapterFactoryService } from './adapter-factory.service.js';
+import { TYPES } from '../../../core/container/types.js';
 
 export interface LoadBalancingResult {
   provider?: Provider;

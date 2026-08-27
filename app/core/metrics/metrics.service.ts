@@ -6,7 +6,7 @@ import type {
   MetricLabels,
   SystemMetrics,
   ApplicationMetrics
-} from './types';
+} from './types.js';
 
 export interface IMetricsService {
   recordHttpRequest(method: string, route: string, statusCode: number, duration: number): void;

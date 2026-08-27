@@ -1,9 +1,9 @@
 import { injectable, inject } from 'inversify';
 import { Collection, Db } from 'mongodb';
-import { ApiRequest } from '../../domain/entities';
+import { ApiRequest } from '../../domain/entities.js';
 import type { ApiRequestRepository } from '../../domain/repositories';
-import type { IDatabaseService } from '../database';
-import { ApiRequestDocument, ApiRequestCollectionName } from '../database/schemas';
+import type { IDatabaseService } from '../database.js';
+import { ApiRequestDocument, ApiRequestCollectionName } from '../database/schemas.js';
 import type { ILogger } from '../../core/logging';
 import { TYPES } from '../../core/container';
 

@@ -2,7 +2,7 @@ import 'reflect-metadata';
 import { container } from './core/container';
 import type { ILogger } from './core/logging';
 import type { MetricsService } from './core/metrics';
-import { TYPES } from './core/container/types';
+import { TYPES } from './core/container/types.js';
 import type { ProviderInitializationService } from './infrastructure/providers/initialization';
 
 export interface BootstrapConfig {

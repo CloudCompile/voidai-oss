@@ -1,5 +1,5 @@
 import { injectable, inject } from 'inversify';
-import { User } from '../../entities';
+import { User } from '../../entities.js';
 import type { UserRepository } from '../../repositories';
 import { CryptoService } from '../../../core/security';
 import { TYPES } from '../../../core/container';

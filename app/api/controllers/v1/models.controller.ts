@@ -1,7 +1,7 @@
 import { injectable } from 'inversify';
-import { TYPES } from '../../../core/container/types';
+import { TYPES } from '../../../core/container/types.js';
 import type { ModelsService } from '../../../application/services';
-import { BaseController, type RequestContext, type ControllerConfiguration } from '../base.controller';
+import { BaseController, type RequestContext, type ControllerConfiguration } from '../base.controller.js';
 
 @injectable()
 export class ModelsController extends BaseController {

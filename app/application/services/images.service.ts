@@ -3,9 +3,9 @@ import { TYPES } from '../../core/container';
 import type { ILogger } from '../../core/logging';
 import type { ErrorClassificationService } from '../../core/error-classification';
 import type { UserService, AuthorizationService, LoadBalancerService, ApiRequestService, CSAMDetectorService } from '../../domain/services';
-import type { LoadBalancingResult } from '../../domain/services/provider/load-balancer.service';
-import type { ApiRequest } from '../../domain/entities';
-import type { ImageGenerationRequest, ImageEditRequest, ImageResponse, AuthenticatedUser } from '../types';
+import type { LoadBalancingResult } from '../../domain/services/provider/load-balancer.service.js';
+import type { ApiRequest } from '../../domain/entities.js';
+import type { ImageGenerationRequest, ImageEditRequest, ImageResponse, AuthenticatedUser } from '../types.js';
 
 interface ProviderAttempt {
   providerId: string;

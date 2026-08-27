@@ -1,5 +1,5 @@
 import { injectable, inject } from 'inversify';
-import { SubProvider, SubProviderIdentity, SubProviderConfiguration, SubProviderMetrics, SubProviderLimits } from '../../entities';
+import { SubProvider, SubProviderIdentity, SubProviderConfiguration, SubProviderMetrics, SubProviderLimits } from '../../entities.js';
 import type { SubProviderRepository } from '../../repositories';
 import { MetricsService } from '../../../core/metrics';
 import { CryptoService } from '../../../core/security';

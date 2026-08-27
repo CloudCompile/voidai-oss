@@ -1,9 +1,9 @@
 import { t } from 'elysia';
 import { injectable } from 'inversify';
-import { TYPES } from '../../../core/container/types';
+import { TYPES } from '../../../core/container/types.js';
 import type { EmbeddingsService } from '../../../application/services';
-import type { EmbeddingRequest } from '../../../application/types';
-import { BaseController, type RequestContext, type ControllerConfiguration } from '../base.controller';
+import type { EmbeddingRequest } from '../../../application/types.js';
+import { BaseController, type RequestContext, type ControllerConfiguration } from '../base.controller.js';
 
 const EmbeddingRequestSchema = t.Object({
   model: t.String(),

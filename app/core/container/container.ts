@@ -1,6 +1,6 @@
 import 'reflect-metadata';
 import { Container } from 'inversify';
-import { TYPES } from './types';
+import { TYPES } from './types.js';
 import { Logger, ILogger } from '../logging';
 import { CryptoService, RateLimiter, SecurityService } from '../security';
 import { PrometheusCollector, MetricsService } from '../metrics';
@@ -39,7 +39,7 @@ import {
   SubProvidersController,
   UsersController,
   ApiLogsController
-} from '../../api/controllers/admin';
+} from '../../api/controllers/admin.js';
 import {
   ChatController,
   AudioController,
@@ -47,7 +47,7 @@ import {
   ImagesController,
   ModelsController,
   ModerationsController
-} from '../../api/controllers/v1';
+} from '../../api/controllers/v1.js';
 
 export interface ContainerConfiguration {
   environment: 'development' | 'production' | 'test';

@@ -1,4 +1,4 @@
-import { ApiRequest } from '../entities';
+import { ApiRequest } from '../entities.js';
 
 export interface ApiRequestRepository {
   findById(id: string): Promise<ApiRequest | null>;

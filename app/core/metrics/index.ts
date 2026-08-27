@@ -1,3 +1,3 @@
-export * from './metrics.service';
-export * from './collectors';
-export * from './types';
+export * from './metrics.service.js';
+export * from './collectors.js';
+export * from './types.js';

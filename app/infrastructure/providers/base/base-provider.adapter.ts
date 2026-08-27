@@ -14,7 +14,7 @@ import type {
   ImageResponse,
   ModerationRequest,
   ModerationResponse
-} from '../../../application/types';
+} from '../../../application/types.js';
 
 export interface ProviderConfiguration {
   readonly name: string;

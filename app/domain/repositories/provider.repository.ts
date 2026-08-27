@@ -1,4 +1,4 @@
-import { Provider } from '../entities';
+import { Provider } from '../entities.js';
 
 export interface ProviderRepository {
   findById(id: string): Promise<Provider | null>;

@@ -1,6 +1,6 @@
 import { injectable, inject } from 'inversify';
-import { User } from '../../entities';
-import { ModelRegistryService } from '../provider';
+import { User } from '../../entities.js';
+import { ModelRegistryService } from '../provider.js';
 import { TYPES } from '../../../core/container';
 
 export interface AuthorizationResult {

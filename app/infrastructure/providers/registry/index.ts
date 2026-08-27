@@ -1,1 +1,1 @@
-export * from './provider-registry.service';
+export * from './provider-registry.service.js';

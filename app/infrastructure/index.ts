@@ -1,3 +1,3 @@
-export * from './database';
+export * from './database.js';
 export * from './repositories';
-export * from './providers';
+export * from './providers.js';

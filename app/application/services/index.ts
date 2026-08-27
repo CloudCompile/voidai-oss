@@ -1,6 +1,6 @@
-export { ChatService } from './chat.service';
-export { AudioService } from './audio.service';
-export { EmbeddingsService } from './embeddings.service';
-export { ImagesService } from './images.service';
-export { ModelsService } from './models.service';
-export { ModerationsService } from './moderations.service';
+export { ChatService } from './chat.service.js';
+export { AudioService } from './audio.service.js';
+export { EmbeddingsService } from './embeddings.service.js';
+export { ImagesService } from './images.service.js';
+export { ModelsService } from './models.service.js';
+export { ModerationsService } from './moderations.service.js';

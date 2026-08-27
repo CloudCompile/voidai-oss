@@ -1,2 +1,2 @@
 export * from './controllers';
-export * from './plugins';
+export * from './plugins.js';

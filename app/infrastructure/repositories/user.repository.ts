@@ -1,9 +1,9 @@
 import { injectable, inject } from 'inversify';
 import { Collection, Db } from 'mongodb';
-import { User } from '../../domain/entities';
+import { User } from '../../domain/entities.js';
 import type { UserRepository } from '../../domain/repositories';
-import type { IDatabaseService } from '../database';
-import { UserDocument, UserCollectionName } from '../database/schemas';
+import type { IDatabaseService } from '../database.js';
+import { UserDocument, UserCollectionName } from '../database/schemas.js';
 import type { ILogger } from '../../core/logging';
 import { TYPES } from '../../core/container';
 

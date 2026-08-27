@@ -1,4 +1,4 @@
-import { UserIdentity, UserAuthentication, UserAuthorization, UserUsage } from '../../../domain/entities';
+import { UserIdentity, UserAuthentication, UserAuthorization, UserUsage } from '../../../domain/entities.js';
 
 export interface UserDocument {
   _id?: string;
