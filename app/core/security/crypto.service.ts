@@ -2,7 +2,7 @@ import { injectable, inject } from 'inversify';
 import crypto from 'crypto';
 import { promisify } from 'util';
 import type { ILogger } from '../logging';
-import { TYPES } from '../container';
+import { TYPES } from '../container/types';
 
 const scryptAsync = promisify(crypto.scrypt);
 

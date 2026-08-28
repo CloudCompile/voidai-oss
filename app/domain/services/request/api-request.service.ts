@@ -2,7 +2,7 @@ import { injectable, inject } from 'inversify';
 import { ApiRequest, RequestIdentity, RequestDetails, RequestMetrics, RequestStatus } from '../../entities';
 import type { ApiRequestRepository } from '../../repositories';
 import type { MetricsService } from '../../../core/metrics';
-import { TYPES } from '../../../core/container';
+import { TYPES } from '../../../core/container/types';
 
 export interface CreateApiRequestRequest {
   userId: string;

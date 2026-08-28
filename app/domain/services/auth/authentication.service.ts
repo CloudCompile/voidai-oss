@@ -2,7 +2,7 @@ import { injectable, inject } from 'inversify';
 import { User } from '../../entities';
 import type { UserRepository } from '../../repositories';
 import { CryptoService } from '../../../core/security';
-import { TYPES } from '../../../core/container';
+import { TYPES } from '../../../core/container/types';
 
 export interface AuthenticationResult {
   success: boolean;

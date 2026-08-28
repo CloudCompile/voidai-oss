@@ -4,7 +4,6 @@ import { TYPES } from '../../core/container/types';
 import type { ILogger } from '../../core/logging';
 import type { MetricsService } from '../../core/metrics';
 import type { SecurityService } from '../../core/security';
-import { container } from '../../core/container';
 import type { AuthenticatedUser } from '../../application/types';
 import { authPlugin, errorPlugin, metricsPlugin, snakeCasePlugin } from '../plugins';
 
@@ -126,7 +125,7 @@ export abstract class BaseController {
 
   protected getService<T>(serviceIdentifier: symbol): T {
     try {
-      return container.get<T>(serviceIdentifier);
+      return this.getContainer().get<T>(serviceIdentifier);
     } catch (error) {
       this.logger.error('Failed to resolve service dependency', error as Error, {
         metadata: {
@@ -257,23 +256,28 @@ export abstract class BaseController {
   }
 
   private initializeLogger(): ILogger {
-    return container.get<ILogger>(TYPES.Logger).createChild(this.constructor.name);
+    return this.getContainer().get<ILogger>(TYPES.Logger).createChild(this.constructor.name);
   }
 
   private initializeMetricsService(): MetricsService {
-    return container.get<MetricsService>(TYPES.MetricsService);
+    return this.getContainer().get<MetricsService>(TYPES.MetricsService);
   }
 
   private initializeSecurityService(): SecurityService {
-    return container.get<SecurityService>(TYPES.SecurityService);
+    return this.getContainer().get<SecurityService>(TYPES.SecurityService);
   }
 
   private initializeAuthorizationService(): any {
-    return container.get(TYPES.AuthorizationService);
+    return this.getContainer().get(TYPES.AuthorizationService);
   }
 
   private initializeUserService(): any {
-    return container.get(TYPES.UserService);
+    return this.getContainer().get(TYPES.UserService);
+  }
+
+  private getContainer() {
+    const { container } = require('../../core/container') as typeof import('../../core/container');
+    return container;
   }
 
   private validateConfiguration(): void {

@@ -1,6 +1,6 @@
 import { injectable, inject } from 'inversify';
 import { t } from 'elysia';
-import { TYPES } from '../../../core/container';
+import { TYPES } from '../../../core/container/types';
 import { BaseController, type ControllerConfiguration } from '../base.controller';
 import type { SubProviderService } from '../../../domain/services';
 

@@ -1,5 +1,5 @@
 import { injectable, inject } from 'inversify';
-import { TYPES } from '../../core/container';
+import { TYPES } from '../../core/container/types';
 import type { ILogger } from '../../core/logging';
 import type { ErrorClassificationService } from '../../core/error-classification';
 import type { UserService, AuthorizationService, LoadBalancerService, LoadBalancingResult, ApiRequestService } from '../../domain/services';

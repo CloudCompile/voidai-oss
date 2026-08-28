@@ -2,7 +2,7 @@ import { injectable, inject } from 'inversify';
 import { Provider } from '../../domain/entities';
 import type { ProviderRepository } from '../../domain/repositories';
 import type { ILogger } from '../../core/logging';
-import { TYPES } from '../../core/container';
+import { TYPES } from '../../core/container/types';
 import { getSupabaseAdmin } from '../supabase/client';
 
 interface ProviderRow {

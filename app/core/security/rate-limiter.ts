@@ -1,7 +1,7 @@
 import { injectable, inject } from 'inversify';
 import { RateLimiterRedis, RateLimiterMemory, IRateLimiterOptions } from 'rate-limiter-flexible';
 import type { ILogger } from '../logging';
-import { TYPES } from '../container';
+import { TYPES } from '../container/types';
 
 export interface RateLimitConfig {
   keyPrefix?: string;

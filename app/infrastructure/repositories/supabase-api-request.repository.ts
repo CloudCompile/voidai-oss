@@ -2,7 +2,7 @@ import { injectable, inject } from 'inversify';
 import { ApiRequest } from '../../domain/entities';
 import type { ApiRequestRepository } from '../../domain/repositories';
 import type { ILogger } from '../../core/logging';
-import { TYPES } from '../../core/container';
+import { TYPES } from '../../core/container/types';
 import { getSupabaseAdmin } from '../supabase/client';
 
 interface ApiRequestRow {

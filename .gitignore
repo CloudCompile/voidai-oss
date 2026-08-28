@@ -56,3 +56,5 @@ Thumbs.db
 
 # Scripts
 scripts/
+.vercel
+.env*

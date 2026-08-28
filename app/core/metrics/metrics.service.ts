@@ -1,6 +1,6 @@
 import { injectable, inject } from 'inversify';
 import type { ILogger } from '../logging';
-import { TYPES } from '../container';
+import { TYPES } from '../container/types';
 import type {
   IMetricsCollector,
   MetricLabels,

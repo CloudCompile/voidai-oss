@@ -1,7 +1,7 @@
 import { injectable, inject } from 'inversify';
 import { MetricsService as CoreMetricsService } from '../../../core/metrics';
 import type { UserRepository, ProviderRepository, SubProviderRepository, ApiRequestRepository } from '../../repositories';
-import { TYPES } from '../../../core/container';
+import { TYPES } from '../../../core/container/types';
 
 export interface SystemMetrics {
   totalUsers: number;

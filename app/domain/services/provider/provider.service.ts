@@ -2,7 +2,7 @@ import { injectable, inject } from 'inversify';
 import { Provider, ProviderIdentity, ProviderConfiguration, ProviderMetrics, ProviderCosts, ProviderSecurity } from '../../entities';
 import type { ProviderRepository } from '../../repositories';
 import { MetricsService } from '../../../core/metrics';
-import { TYPES } from '../../../core/container';
+import { TYPES } from '../../../core/container/types';
 
 export interface CreateProviderRequest {
   name: string;

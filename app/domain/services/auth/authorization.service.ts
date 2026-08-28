@@ -1,7 +1,7 @@
 import { injectable, inject } from 'inversify';
 import { User } from '../../entities';
 import { ModelRegistryService } from '../provider';
-import { TYPES } from '../../../core/container';
+import { TYPES } from '../../../core/container/types';
 
 export interface AuthorizationResult {
   authorized: boolean;

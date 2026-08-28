@@ -5,7 +5,7 @@ import type { SubProviderRepository } from '../../domain/repositories';
 import type { IDatabaseService } from '../database';
 import { SubProviderDocument, SubProviderCollectionName } from '../database/schemas';
 import type { ILogger } from '../../core/logging';
-import { TYPES } from '../../core/container';
+import { TYPES } from '../../core/container/types';
 
 @injectable()
 export class MongoSubProviderRepository implements SubProviderRepository {

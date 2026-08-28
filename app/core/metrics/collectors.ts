@@ -1,7 +1,7 @@
 import { injectable, inject } from 'inversify';
 import { register, Counter, Gauge, Histogram, Summary, collectDefaultMetrics } from 'prom-client';
 import type { ILogger } from '../logging';
-import { TYPES } from '../container';
+import { TYPES } from '../container/types';
 import {
   IMetricsCollector,
   MetricLabels,

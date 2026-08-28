@@ -3,7 +3,7 @@ import { User, UserIdentity, UserAuthentication, UserAuthorization, UserUsage } 
 import type { UserRepository } from '../../repositories';
 import { MetricsService } from '../../../core/metrics';
 import { SecurityService } from '../../../core/security';
-import { TYPES } from '../../../core/container';
+import { TYPES } from '../../../core/container/types';
 
 export interface CreateUserRequest {
   name: string;

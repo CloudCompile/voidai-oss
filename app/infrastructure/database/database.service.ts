@@ -1,7 +1,7 @@
 import { injectable, inject } from 'inversify';
 import { MongoClient, Db, MongoClientOptions } from 'mongodb';
 import type { ILogger } from '../../core/logging';
-import { TYPES } from '../../core/container';
+import { TYPES } from '../../core/container/types';
 
 export interface IDatabaseService {
   connect(): Promise<void>;

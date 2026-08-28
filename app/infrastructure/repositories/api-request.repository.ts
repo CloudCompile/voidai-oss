@@ -5,7 +5,7 @@ import type { ApiRequestRepository } from '../../domain/repositories';
 import type { IDatabaseService } from '../database';
 import { ApiRequestDocument, ApiRequestCollectionName } from '../database/schemas';
 import type { ILogger } from '../../core/logging';
-import { TYPES } from '../../core/container';
+import { TYPES } from '../../core/container/types';
 
 @injectable()
 export class MongoApiRequestRepository implements ApiRequestRepository {

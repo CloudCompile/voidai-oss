@@ -1,7 +1,7 @@
 import { injectable, inject } from 'inversify';
 import type { UserRepository } from '../../repositories';
 import type { ILogger } from '../../../core/logging';
-import { TYPES } from '../../../core/container';
+import { TYPES } from '../../../core/container/types';
 import { PLAN_CONFIGS, type UserPlan } from '../../config';
 
 export interface ICreditService {

@@ -3,7 +3,7 @@ import { SubProvider, SubProviderIdentity, SubProviderConfiguration, SubProvider
 import type { SubProviderRepository } from '../../repositories';
 import { MetricsService } from '../../../core/metrics';
 import { CryptoService } from '../../../core/security';
-import { TYPES } from '../../../core/container';
+import { TYPES } from '../../../core/container/types';
 
 export interface CreateSubProviderRequest {
   providerId: string;
