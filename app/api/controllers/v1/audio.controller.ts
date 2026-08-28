@@ -243,5 +243,3 @@ export class AudioController extends BaseController {
     });
   }
 }
-
-export const audioController = new AudioController().registerRoutes();

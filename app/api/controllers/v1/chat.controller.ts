@@ -208,5 +208,3 @@ export class ChatController extends BaseController {
     return this.createSuccessResponse(result, context);
   }
 }
-
-export const chatController = new ChatController().registerRoutes();

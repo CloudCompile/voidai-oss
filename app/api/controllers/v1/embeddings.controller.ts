@@ -119,5 +119,3 @@ export class EmbeddingsController extends BaseController {
     });
   }
 }
-
-export const embeddingsController = new EmbeddingsController().registerRoutes();

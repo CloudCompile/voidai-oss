@@ -117,5 +117,3 @@ export class ModerationsController extends BaseController {
     });
   }
 }
-
-export const moderationsController = new ModerationsController().registerRoutes();

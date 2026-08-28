@@ -80,5 +80,3 @@ export class ModelsController extends BaseController {
       });
   }
 }
-
-export const modelsController = new ModelsController().registerRoutes();

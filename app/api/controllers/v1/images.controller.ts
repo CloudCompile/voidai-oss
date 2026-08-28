@@ -195,5 +195,3 @@ export class ImagesController extends BaseController {
     });
   }
 }
-
-export const imagesController = new ImagesController().registerRoutes();
